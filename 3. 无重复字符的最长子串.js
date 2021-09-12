@@ -25,25 +25,61 @@
  */
 
 let s = "abcabcbb"
+/* 滑动窗口
+  1、维护一个数组 遍历字符串  将字符串放入数组中
+  2、如果字符串在数组中存在  则删除数组中该字符串出现以前的字符串
+  3、将当前字符串push进去
+  4、取max的最大值
+
+*/
+/**
+ * @param {string} s
+ * @return {number}
+ */
+// var lengthOfLongestSubstring = function (s) {
+//   if (!s || s.length < 0) return 0;
+
+//   let arr = [];
+//   let max = 0;
+
+//   for(let i = 0; i < s.length; i++) {
+//     let index = arr.indexOf(s[i]);
+//     if (index !== - 1) {
+//       //  存在  删除该字符串在arr中以前的字段
+//       // index + 1 是因为 indexOf获取到的是下标  而删除的是从1开始
+//       arr.splice(0, index + 1 )
+//     }
+//       arr.push(s.charAt(i));
+//       // max 取最大值
+//       max = Math.max(arr.length, max);
+//   };
+//   return max;
+// };
+
+/* 
+  利用map  在第一种方式的基础上   维护的数据通过map来存储
+  将字符串下标 i 存进map中
+*/
 /**
  * @param {string} s
  * @return {number}
  */
 var lengthOfLongestSubstring = function (s) {
-  if (!s) return 0;
-  let l = 0; // 定义左指针
-  let res = 0; // 结果
-  let map = new Map(); // 存放字符和对应下标
-  for (let r = 0; r < s.length; r++) {
-    // 如果出现了重复字符，则把左指针移到重复字符的下一位。注意同时满足重复字符的索引大于左指针。
-    if (map.has(s[r]) && map.get(s[r]) >= l) {
-      l = map.get(s[r]) + 1;
-    }
-    res = Math.max(res, r - l + 1); // 计算结果
-    map.set(s[r], r); // 存下每个字符的下标
-  }
-  return res;
+  if (!s || s.length < 0) return 0;
 
+  let map = new Map();
+  let max = 0;
+  let j = 0;
+
+  for(let i = 0; i < s.length; i++) {
+    if(map.has(s[i])) {
+      j = Math.max(map.get(s[i]) + 1, j);
+    }
+    // 将当前字符串下标存入
+    max = Math.max(max, i - j + 1)
+    map.set(s[i], i);
+  };
+  return max;
 };
 
 console.log(lengthOfLongestSubstring(s));
