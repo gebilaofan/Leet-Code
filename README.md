@@ -1,2 +1,2 @@
 # Leet-Code
-刷算法
+leet-code刷题
