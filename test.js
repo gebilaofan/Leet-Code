@@ -1,37 +1,37 @@
 /*
- * @lc app=leetcode.cn id=13 lang=javascript
+ * @lc app=leetcode.cn id=14 lang=javascript
  *
- * [13] 罗马数字转整数
+ * [14] 最长公共前缀
  */
 
 // @lc code=start
 /**
- * @param {string} s
- * @return {number}
+ * @param {string[]} strs
+ * @return {string}
  */
- var romanToInt = function(s) {
-  const map = {
-    'I': 1,
-    'V': 5,
-    'X': 10,
-    'L': 50,
-    'C': 100,
-    'D': 500,
-    'M': 1000,
-  }
-  let result = 0
+ var longestCommonPrefix = function (strs) {
+  /* 
+  flower ===> f l o
+  flow ===> f l o
+  flight ===> f l i 
+  */
+  // 建立两个指针  一个指针扫描 strs  一个指针扫描str
+  if(strs.length == 0) 
+  return ""
+  else if (strs.length === 1)
+  return strs[0]
+  const str = strs[0]
+  if (!str.length) return str
+  for (let j = 0; j < str.length; j++) {
 
-  for (let i = 0; i < s.length; i++) {
-    console.log(map[s[i]], map[s[i+1]])
-    if (map[s[i]] < map[s[i + 1]]) {
-      result -= map[s[i]]
-    } else {
-      result += map[s[i]]
+    console.log(j, '---')
+    for (let i = 1; i < strs.length; i++) {
+      if (str[j] !== strs[i][j]) {
+        return str.slice(0, j)
+      }
     }
   }
-
-  return result
 };
-console.log(romanToInt('IL'))
 // @lc code=end
 
+console.log(longestCommonPrefix(['', '']))
