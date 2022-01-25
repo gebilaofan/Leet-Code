@@ -21,30 +21,9 @@
   },
   "homepage": "https://github.com/gebilaofan/Leet-Code#readme",
   "devDependencies": {
-    "@commitlint/config-conventional": "^16.0.0",
-    "@commitlint/core": "^16.1.0",
-    "commitizen": "^4.2.4",
-    "commitlint": "^16.1.0",
-    "commitlint-config-cz": "^0.13.3",
-    "conventional-changelog": "^3.1.25",
-    "cz-conventional-changelog": "^3.3.0",
-    "cz-customizable": "^6.3.0",
     "eslint": "^8.7.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "husky": "^7.0.4",
-    "lint-staged": "^12.3.1",
     "prettier": "^2.5.1"
-  },
-  "lint-staged": {
-    "*.{js}": [
-      "prettier --write",
-      "eslint --fix"
-    ]
-  },
-  "config": {
-    "commitizen": {
-      "path": "node_modules/cz-customizable"
-    }
   }
 }
