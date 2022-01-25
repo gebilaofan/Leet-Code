@@ -10,14 +10,12 @@
  * @return {number}
  */
 var fib = function (n) {
-
   // 暴力递归
   // if (n <=2) return n
 
   // return fib(n-1) + fib(n-2)
 
-
-  // 设一个变量 用变量来做缓存  循环n 
+  // 设一个变量 用变量来做缓存  循环n
   // 递推
   // if (n <=2) return n
 
@@ -41,14 +39,13 @@ var fib = function (n) {
   // return current
 
   // 递归 + map缓存
-  const map = new Map()
-  if(n < 2) return n
+  const map = new Map();
+  if (n < 2) return n;
 
-  if(!map.has(n)) {
-      map.set(n, fib(n - 1) + fib(n - 2))
+  if (!map.has(n)) {
+    map.set(n, fib(n - 1) + fib(n - 2));
   }
 
-  return map.get(n)
+  return map.get(n);
 };
 // @lc code=end
-
