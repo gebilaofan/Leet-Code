@@ -21,9 +21,11 @@
   "homepage": "https://github.com/gebilaofan/Leet-Code#readme",
   "devDependencies": {
     "@commitlint/config-conventional": "^16.0.0",
+    "@commitlint/core": "^16.1.0",
     "commitizen": "^4.2.4",
     "commitlint": "^16.1.0",
     "commitlint-config-cz": "^0.13.3",
+    "commitlint-config-gitmoji": "^2.2.5",
     "cz-conventional-changelog": "^3.3.0",
     "cz-conventional-emoji": "^1.0.2",
     "cz-customizable": "^6.3.0",
