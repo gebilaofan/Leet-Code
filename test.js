@@ -1,37 +1,38 @@
 /*
- * @lc app=leetcode.cn id=14 lang=javascript
+ * @lc app=leetcode.cn id=35 lang=javascript
  *
- * [14] 最长公共前缀
+ * [35] 搜索插入位置
  */
 
 // @lc code=start
 /**
- * @param {string[]} strs
- * @return {string}
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
  */
- var longestCommonPrefix = function (strs) {
-  /* 
-  flower ===> f l o
-  flow ===> f l o
-  flight ===> f l i 
-  */
-  // 建立两个指针  一个指针扫描 strs  一个指针扫描str
-  if(strs.length == 0) 
-  return ""
-  else if (strs.length === 1)
-  return strs[0]
-  const str = strs[0]
-  if (!str.length) return str
-  for (let j = 0; j < str.length; j++) {
+ var searchInsert = function(nums, target) {
+  let index = nums.indexOf(target)
+  console.log()
+  if (!index) {
+    return index
+  }
+  // 吧target插入
 
-    console.log(j, '---')
-    for (let i = 1; i < strs.length; i++) {
-      if (str[j] !== strs[i][j]) {
-        return str.slice(0, j)
-      }
+  // nums.push(target)
+  // // 从小到大排序  // 返回target在新数组中的位置
+  // return nums.sort((a, b) => {return a - b }).indexOf(target)
+
+  let n = 0
+  // 暴力循环
+  // nums.push(target) //[1,3,5,6,7]
+  for(let i = 0; i < nums.length; i++) {
+    if (nums[i] > target) {
+      n++
     }
   }
+  console.log(n, '---n')
+  return nums.length - n
 };
 // @lc code=end
 
-console.log(longestCommonPrefix(['', '']))
+console.log( searchInsert([1,3,5,6], 0))
