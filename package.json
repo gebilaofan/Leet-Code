@@ -1,7 +1,6 @@
 {
   "name": "leet-code",
   "description": "leet-code刷题记录✏️",
-  "main": "test.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install"
@@ -17,20 +16,5 @@
     "url": "https://github.com/gebilaofan/Leet-Code/issues"
   },
   "homepage": "https://github.com/gebilaofan/Leet-Code#readme",
-  "devDependencies": {
-    "@commitlint/config-conventional": "^16.0.0",
-    "commitlint": "^16.1.0",
-    "eslint": "^8.7.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "husky": "^7.0.4",
-    "lint-staged": "^12.3.1",
-    "prettier": "^2.5.1"
-  },
-  "lint-staged": {
-    "*.{ts,js}": [
-      "prettier --write",
-      "eslint --fix"
-    ]
-  }
+  "devDependencies": {}
 }
