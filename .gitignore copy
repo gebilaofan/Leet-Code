@@ -1,0 +1,14 @@
+# 忽略文件
+.cache
+.DS_Store
+.idea
+*.log
+*.tgz
+coverage
+dist
+lib-cov
+logs
+node_modules
+temp
+yarn.lock
+yarn-error.log
