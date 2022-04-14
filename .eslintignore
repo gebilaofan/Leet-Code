@@ -1,4 +1,7 @@
 # eslint 忽略文件
 dist
+libs
 node_modules
+.github/**/*
+.husky/**/*
 *.md
