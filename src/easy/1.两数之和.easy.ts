@@ -6,7 +6,16 @@
 
 // @lc code=start
 function twoSum(nums: number[], target: number): number[] {
-  const arr: Array<number> = [1, 2, 3];
-  return arr;
+  // 暴力解法
+  let result: number[] = [];
+  for (let i = 0; i < nums.length; i++) {
+    for (let j = i; j < nums.length; j++) {
+      if (nums[i] + nums[j] === target) {
+        result = [i, j];
+      }
+    }
+  }
+
+  return result;
 }
 // @lc code=end
