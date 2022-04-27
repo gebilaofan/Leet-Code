@@ -65,7 +65,7 @@ class LinkedList {
    *
    * @memberof LinkedList
    */
-  print() {
+  print(): void {
     let res = '';
     let currentNode: LinkedNode | null = this.head;
     console.log('~~~~ currentNode === null', currentNode === null);
@@ -80,6 +80,31 @@ class LinkedList {
     } else {
       console.log('这里什么都没有');
     }
+  }
+
+  insert(position: number, element: LinkedElement): boolean {
+    let currentNode = this.head;
+    const node = new Node(element);
+    // 存在头节点
+    if (currentNode !== null) {
+      // 判断插入的位置是否在范围内  0 < position > this.size
+
+      if (position < 0 && position > this.size) {
+        console.log(`当前位置${position}无法插入`);
+        return false;
+      }
+
+      while (currentNode.next) {
+        currentNode = currentNode.next;
+      }
+      currentNode.next = node;
+    } else {
+      // 不存在头节点  直接将头节点指向当前
+      this.head = node;
+    }
+
+    this.size++;
+    return true;
   }
 }
 
