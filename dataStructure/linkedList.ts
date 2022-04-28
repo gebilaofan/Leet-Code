@@ -82,7 +82,15 @@ class LinkedList {
     }
   }
 
-  insert(position: number, element: LinkedElement): boolean {
+  /**
+   * 向链表特定位置插入一个新的元素
+   *
+   * @param {LinkedElement} element
+   * @param {number} position
+   * @return {*}  {boolean}
+   * @memberof LinkedList
+   */
+  insert(element: LinkedElement, position: number): boolean {
     let currentNode = this.head;
     const node = new Node(element);
     // 存在头节点
@@ -93,7 +101,7 @@ class LinkedList {
         console.log(`当前位置${position}无法插入`);
         return false;
       }
-
+      // 查找节点
       while (currentNode.next) {
         currentNode = currentNode.next;
       }
@@ -105,6 +113,63 @@ class LinkedList {
 
     this.size++;
     return true;
+  }
+
+  /**
+   * 返回元素在链表中的索引
+   *
+   * @param {LinkedElement} element
+   * @return {*}  {number}
+   * @memberof LinkedList
+   */
+  indexOf(element: LinkedElement): number {
+    return -1;
+  }
+
+  /**
+   * 根据索引去获取链表中的元素  如果有则返回该节点 没有返回undefined
+   *
+   * @param {number} index
+   * @return {*}  {(LinkedNode | undefined)}
+   * @memberof LinkedList
+   */
+  getElementAt(index: number): LinkedNode | undefined {
+    // 索引边界判断
+    // if (index < 0 && index > this.size && this.head === null) return undefined;
+    if (index >= 0 && index <= this.size && this.head !== null) {
+      let current: LinkedNode = this.head;
+      while (index && current.next) {
+        current = current.next;
+      }
+      return current;
+    }
+    return undefined;
+  }
+
+  /**
+   * 移除某个节点
+   *
+   * @param {LinkedElement} element
+   * @memberof LinkedList
+   */
+  // remove(element: LinkedElement): void {}
+
+  /**
+   * 根据position移除某个节点
+   *
+   * @param {number} position
+   * @memberof LinkedList
+   */
+  // removeAt(position: number): void {}
+
+  /**
+   * 查看链表是否为空 长度大于0 返回 false  长度小于 0 返回 true
+   *
+   * @return {*}  {boolean}
+   * @memberof LinkedList
+   */
+  isEmpty(): boolean {
+    return false;
   }
 }
 
