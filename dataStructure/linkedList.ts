@@ -46,12 +46,14 @@ class LinkedList {
     let currentNode: LinkedNode | null = this.head; // 缓存 head
     if (currentNode) {
       // 存在头节点 找到最后一个节点 将 next 指针指向当前 node
-      while (currentNode && currentNode.next) {
-        // 不断赋值  直到最后一个节点
-        currentNode = currentNode.next;
-      }
-      // 此时 currentNode 为最后一个节点  将next 指向node
-      currentNode.next = node;
+      console.log(this.size, '--size');
+      console.log(this.getElementAt(this.size));
+      // while (currentNode && currentNode.next) {
+      //   // 不断赋值  直到最后一个节点
+      //   currentNode = currentNode.next;
+      // }
+      // // 此时 currentNode 为最后一个节点  将next 指向node
+      currentNode = this.getElementAt(this.size);
     } else {
       // 将头节点只向当前
       this.head = node;
@@ -127,15 +129,19 @@ class LinkedList {
   }
 
   /**
-   * 根据索引去获取链表中的元素  如果有则返回该节点 没有返回undefined
+   * 根据索引去获取链表中的元素  如果有则返回该节点 没有返回 null
    *
    * @param {number} index
    * @return {*}  {(LinkedNode | undefined)}
    * @memberof LinkedList
    */
-  getElementAt(index: number): LinkedNode | undefined {
+  getElementAt(index: number): LinkedNode | null {
     // 索引边界判断
     // if (index < 0 && index > this.size && this.head === null) return undefined;
+    console.log(
+      '~~~~ index >= 0 && index <= this.size && this.head !== null',
+      index >= 0 && index <= this.size && this.head !== null,
+    );
     if (index >= 0 && index <= this.size && this.head !== null) {
       let current: LinkedNode = this.head;
       while (index && current.next) {
@@ -143,7 +149,7 @@ class LinkedList {
       }
       return current;
     }
-    return undefined;
+    return null;
   }
 
   /**
