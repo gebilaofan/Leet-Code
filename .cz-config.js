@@ -3,69 +3,69 @@
 module.exports = {
   types: [
     {
-      value: 'release',
+      value: ':rocket: release',
       name: '🚀  release:  发布版本/发布标签',
     },
     {
-      value: 'WIP',
-      name: '💪  WIP:      正在进行的工作',
+      value: ':construction: WIP',
+      name: '🚧  WIP:      正在进行的工作',
     },
     {
-      value: 'feat',
+      value: ':sparkles: feat',
       name: '✨  feat:     新的特性',
     },
     {
-      value: 'fix',
+      value: ':bug: fix',
       name: '🐛  fix:      修复Bug',
     },
     {
-      value: 'CI',
-      name: '🔧  CI:       目录结构变更(CI, Buiding, Tool...)',
+      value: ':wrench: CI',
+      name: '🔧  CI:       目录结构变更(CI, Building, Tool...)',
     },
 
     {
-      value: 'docs',
+      value: ':pencil: docs',
       name: '📝  docs:     仅文档更改',
     },
     {
-      value: 'merge',
+      value: ':twisted_rightwards_arrows: merge',
       name: '🔀  merge:    合并分支',
     },
     {
-      value: 'revert',
+      value: ':rewind: revert',
       name: '⏪  revert:   版本回滚',
     },
     {
-      value: 'test',
+      value: ':white_check_mark: test',
       name: '✅  test:     添加缺失的测试或更正现有测试',
     },
     {
-      value: 'perf',
+      value: ':chart_with_upwards_trend: perf',
       name: '📈  perf:     提高性能的代码更改',
     },
     {
-      value: 'chore',
+      value: ':thought_balloon: chore',
       name: '🗯   chore:    不修改src或测试文件的更改。例如更新构建任务、包管理器',
     },
     {
-      value: 'ui',
+      value: ':lipstick: ui',
       name: '💄  UI:       更新UI和样式文件。',
     },
     {
-      value: 'style',
+      value: ':art: style',
       name: '🎨  style:    不影响代码含义的更改（空白、格式、缺少分号等）',
     },
     {
-      value: 'dep_up',
+      value: ':package: dep_up',
       name: '📦  dep_up:   更新已编译的文件或包。',
     },
 
     {
-      value: 'refactor',
+      value: ':hammer: refactor',
       name: '🔨  refactor: 既不修复错误也不添加功能的代码更改',
     },
     {
-      value: 'mv',
+      value: ':truck: mv',
       name: '🚚  mv:       移动或重命名文件。',
     },
   ],
@@ -82,6 +82,6 @@ module.exports = {
     footer: '关联关闭的issue，例如：#31, #34(可选):\n',
     confirmCommit: '确定提交说明? yes/no',
   },
-  allowCustomScopes: true,
+  allowCustomScopes: false,
   allowBreakingChanges: ['feat', 'fix'],
 };

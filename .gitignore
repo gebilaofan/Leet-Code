@@ -10,5 +10,3 @@ lib-cov
 logs
 node_modules
 temp
-yarn.lock
-yarn-error.log

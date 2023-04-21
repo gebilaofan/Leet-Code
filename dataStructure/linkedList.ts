@@ -1,9 +1,9 @@
 type LinkedElement = number | string;
-
 type LinkedNode = {
   value: LinkedElement;
   next: LinkedNode | null;
 };
+
 /**
  * 节点
  *
