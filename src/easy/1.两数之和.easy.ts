@@ -6,16 +6,20 @@
 
 // @lc code=start
 function twoSum(nums: number[], target: number): number[] {
-  // 暴力解法
-  let result: number[] = [];
+  const map = new Map();
+
   for (let i = 0; i < nums.length; i++) {
-    for (let j = i; j < nums.length; j++) {
-      if (nums[i] + nums[j] === target) {
-        result = [i, j];
-      }
+    const element = nums[i];
+    // 判断 i 是否在map中存在   9 - 2 = 7
+    if (map.has(target - element)) {
+      return [map.get(target - element), i];
+    } else {
+      // 不存在  存入 map
+      map.set(element, i);
     }
   }
 
-  return result;
+  return [];
 }
+twoSum([1, 2, 4, 5, 3], 5);
 // @lc code=end

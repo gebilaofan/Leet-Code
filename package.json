@@ -37,7 +37,7 @@
     "dist"
   ],
   "scripts": {
-    "lint": "prettier --write . && eslint --fix --ext .js,.ts,.vue",
+    "lint": "prettier --write src && eslint --fix --ext src",
     "prepare": "husky install",
     "commit": "sh commit.sh",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",

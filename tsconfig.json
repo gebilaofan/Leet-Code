@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "outDir": "./dist",
-    "target": "es2017",
-    "module": "esnext",
+    "target": "es5",
+    "module": "CommonJS",
     "lib": ["esnext"],
     "moduleResolution": "node",
     "esModuleInterop": true,
@@ -11,8 +11,9 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
-    "types": ["node"]
+    "types": ["node"],
+    "sourceMap": true
   },
-  "include": ["src/**/*.ts", "dataStructure/**/*.ts"],
+  "include": ["src/**/*.ts"],
   "exclude": ["node_modules", "test/**/*", "dist/**"]
 }
