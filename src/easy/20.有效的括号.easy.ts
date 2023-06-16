@@ -6,27 +6,27 @@
 
 // @lc code=start
 function isValid(s: string): boolean {
-  if (!s) return false;
+  if (!s) return false
   const map: any = {
     '{': '}',
     '[': ']',
     '(': ')',
-  };
+  }
 
-  const stack = [];
+  const stack = []
 
   for (let i = 0; i < s.length; i++) {
     if (s[i] === '(' || s[i] === '{' || s[i] === '[') {
-      stack.push(map[s[i]]);
+      stack.push(map[s[i]])
     } else {
-      console.log('stack', stack);
+      console.log('stack', stack)
       if (!stack.length || stack.pop() !== s[i]) {
-        return false;
+        return false
       }
     }
   }
 
-  return !stack.length;
+  return !stack.length
 }
-isValid('()');
+isValid('()')
 // @lc code=end
